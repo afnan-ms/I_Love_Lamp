@@ -7,42 +7,45 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid 
-        x:Name="rootLayout"
-        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-        AllowDrop="True"
-        DropCompleted="Grid_DropCompleted"
-        Drop="rootLayout_Drop"
-        CanDrag="True"
-        DragOver="rootLayout_DragOver"
+  <Grid
+      x:Name="rootLayout"
+      AllowDrop="True"
+      DropCompleted="Grid_DropCompleted"
+      Drop="rootLayout_Drop"
+      CanDrag="True"
+      DragOver="rootLayout_DragOver"
         >
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="Auto"></ColumnDefinition>
-        </Grid.ColumnDefinitions>
-        <ToggleSwitch x:Name="toggleSwitch" Header="Light" HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Stretch" Toggled="LampSwitch_Toggled" Grid.Row="0" Grid.Column="0"/>
-        <ToggleSwitch x:Name="ambientToggleSwitch" Header="Adaptive Ambient Lighting" HorizontalAlignment="Right" Margin="10,10,10,10" VerticalAlignment="Stretch" Toggled="ambientToggleSwitch_Toggled" Grid.Row="0" Grid.Column="0"/>
-        <Slider Header="Hue" x:Name="hueSlider" Margin="10,10,56,0" VerticalAlignment="Top" Grid.Row="2" Height="70" HorizontalAlignment="Stretch"/>
-        <Slider Header="Saturation" x:Name="saturationSlider" Margin="10,10,56,0" VerticalAlignment="Top" Grid.Row="3" Height="75" HorizontalAlignment="Stretch"/>
-        <Slider Header="Brightness" x:Name="brightnessSlider" Margin="10,10,56,0" VerticalAlignment="Top" Grid.Row="4" Height="75" HorizontalAlignment="Stretch"/>
-        <Button Content="Set" HorizontalAlignment="Right" Margin="0,30,10,0" VerticalAlignment="Top" Click="SetHue_Clicked" Grid.Row="2" Height="35"/>
-        <Button Content="Set" HorizontalAlignment="Right" Margin="0,30,10,0" VerticalAlignment="Top" Click="SetSaturation_Clicked" Grid.Row="3" Height="35" Width="41"/>
-        <Button Content="Set" HorizontalAlignment="Right" Margin="0,30,10,0" VerticalAlignment="Top" Click="SetBrightness_Clicked" Grid.Row="4" Height="35" Width="41"/>
-        <Button x:Name="button" Content="Cycle" HorizontalAlignment="Stretch" Margin="10,0,10,30" VerticalAlignment="Bottom" Click="button_Click" Grid.Row="5" Height="50"/>
-        <TextBlock x:Name="deviceStatus" HorizontalAlignment="Stretch" Margin="10,10,10,10" Grid.Row="6" Grid.Column="0" TextWrapping="Wrap" Text="Lights: 0" VerticalAlignment="Stretch"/>
-        <TextBlock x:Name="faceInfoText" HorizontalAlignment="Right" Margin="10,10,10,10" Grid.Row="6" Grid.Column="1" TextWrapping="Wrap" Text="Faces: 0" VerticalAlignment="Stretch"/>
-        <CaptureElement Name="PreviewControl" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-        <Button x:Name="cameraSelectButton" Content="Switch camera" Grid.Column="1" HorizontalAlignment="Left" Margin="10,12,10,10" Grid.Row="1" Grid.RowSpan="3" VerticalAlignment="Top" Click="cameraSelectButton_Click"/>
-        <ToggleSwitch x:Name="faceToggle" Grid.Column="1" Header="Set saturation to faces" HorizontalAlignment="Left" Margin="10,10.10,10,10" Grid.Row="0" VerticalAlignment="Top"/>
-    </Grid>
+    <Grid.Background>
+      <ImageBrush Stretch="None" ImageSource="/Assets/SplashScreen.scale-200.png" AlignmentY="Top" AlignmentX="Center" Opacity="0.1"/>
+    </Grid.Background>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" MinHeight="96"></RowDefinition>
+      <RowDefinition Height="77*"/>
+      <RowDefinition Height="31*"/>
+      <RowDefinition Height="Auto" MinHeight="89.896"></RowDefinition>
+      <RowDefinition Height="Auto" MinHeight="90.771"></RowDefinition>
+      <RowDefinition Height="Auto"></RowDefinition>
+      <RowDefinition Height="Auto"></RowDefinition>
+      <RowDefinition Height="Auto"></RowDefinition>
+      <RowDefinition Height="Auto"></RowDefinition>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition/>
+      <ColumnDefinition Width="Auto" MinWidth="171"></ColumnDefinition>
+    </Grid.ColumnDefinitions>
+    <ToggleSwitch Background="CornflowerBlue" x:Name="toggleSwitch" Header="Light" HorizontalAlignment="Stretch" Margin="0,0,10,166" VerticalAlignment="Stretch" Toggled="LampSwitch_Toggled" Grid.Column="1" Grid.Row="1" RequestedTheme="Dark"/>
+    <ToggleSwitch Background="CornflowerBlue" x:Name="ambientToggleSwitch" Header="Adaptive Ambient Lighting" HorizontalAlignment="Stretch" Margin="0,149,10,5" VerticalAlignment="Stretch" Toggled="ambientToggleSwitch_Toggled" Grid.Row="1" Grid.Column="1" RequestedTheme="Dark"/>
+    <Slider Background="CornflowerBlue" Header="Hue" x:Name="hueSlider" Margin="10,10,10,13" Grid.Row="2" RequestedTheme="Dark"/>
+    <Slider Background="CornflowerBlue" Header="Saturation" x:Name="saturationSlider" Grid.Row="3" Margin="10,0,10,14.896" RequestedTheme="Dark"/>
+    <Slider Background="CornflowerBlue" Header="Brightness" x:Name="brightnessSlider" Margin="10,10.104,10,12.667" Grid.Row="4" RequestedTheme="Dark"/>
+    <Button Background="CornflowerBlue" Content="Set" HorizontalAlignment="Stretch" Margin="0,0,10,3.896" VerticalAlignment="Stretch" Click="SetHue_Clicked" Grid.Row="3" Grid.Column="1" RequestedTheme="Dark"/>
+    <Button Background="CornflowerBlue" Content="Set" HorizontalAlignment="Stretch" Margin="0,0,10,5" VerticalAlignment="Stretch" Click="SetSaturation_Clicked" Grid.Row="2" Grid.Column="1" RequestedTheme="Dark"/>
+    <Button Background="CornflowerBlue" Content="Set" HorizontalAlignment="Stretch" Margin="0,1.104,10,0.667" VerticalAlignment="Stretch" Click="SetBrightness_Clicked" Grid.Row="4" RenderTransformOrigin="2.049,0.371" Grid.Column="1" RequestedTheme="Dark"/>
+    <Button Background="CornflowerBlue" x:Name="button" Content="Cycle" HorizontalAlignment="Stretch" Margin="0,0,10,7" VerticalAlignment="Bottom" Click="button_Click" Grid.Column="1" Height="65" RequestedTheme="Dark"/>
+    <TextBlock x:Name="deviceStatus" HorizontalAlignment="Stretch" Margin="10,9.333,10,9" Grid.Row="6" Grid.Column="0" TextWrapping="Wrap" Text="Lights: 0" VerticalAlignment="Stretch" Grid.RowSpan="2" RequestedTheme="Dark"/>
+    <TextBlock x:Name="faceInfoText" Margin="99,9.333,10,10" Grid.Row="6" Grid.Column="1" TextWrapping="Wrap" Text="Faces: 0" VerticalAlignment="Stretch" Grid.RowSpan="2" RequestedTheme="Dark"/>
+    <CaptureElement Name="PreviewControl" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch" Margin="0,0,0,5"/>
+    <Button Background="CornflowerBlue" x:Name="cameraSelectButton" Content="Switch camera" HorizontalAlignment="Stretch" Margin="10,0,3,7" VerticalAlignment="Bottom" Click="cameraSelectButton_Click" Height="65" RequestedTheme="Dark"/>
+    <ToggleSwitch Background="CornflowerBlue" x:Name="faceToggle" Grid.Column="1" Header="Set saturation to faces" HorizontalAlignment="Stretch" Margin="0,69,10,87" Grid.Row="1" VerticalAlignment="Stretch" RequestedTheme="Dark"/>
+  </Grid>
 </Page>
